@@ -13,7 +13,7 @@
 // Change this if the API isn't on localhost:8000 (e.g. after deploying
 // the backend somewhere else). Can also be set before this script loads
 // via: <script>window.PRISM_API_BASE = 'https://your-api.example.com';</script>
-const API_BASE = window.PRISM_API_BASE || 'http://localhost:8000';
+const API_BASE = window.PRISM_API_BASE || 'https://prism-sih26-backend.onrender.com';
 
 /* ---------- Demo-only fixed MFA secrets ----------
    Matches DEMO_MFA_SECRETS in the backend's app/db/seed.py.

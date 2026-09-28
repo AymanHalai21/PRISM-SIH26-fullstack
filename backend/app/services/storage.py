@@ -11,8 +11,13 @@ class ObjectStorage:
     def __init__(self):
         settings = get_settings()
         self.bucket = settings.minio_bucket
-        self.client = Minio(settings.minio_endpoint, access_key=settings.minio_access_key, secret_key=settings.minio_secret_key, secure=False)
-
+        self.client = Minio(
+            settings.minio_endpoint,
+            access_key=settings.minio_access_key,
+            secret_key=settings.minio_secret_key,
+            secure=settings.minio_secure,
+            region=settings.minio_region or None,
+            )
     def _ensure_bucket(self) -> None:
         if not self.client.bucket_exists(self.bucket):
             self.client.make_bucket(self.bucket)

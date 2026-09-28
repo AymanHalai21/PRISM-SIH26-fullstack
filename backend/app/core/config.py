@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     minio_endpoint: str = "localhost:9000"
     minio_access_key: str = "minioadmin"
     minio_secret_key: str = "minioadmin"
+    minio_secure: bool = False
+    minio_region: str = ""
     minio_bucket: str = "prism-documents"
     cors_origins: str = ""
 
